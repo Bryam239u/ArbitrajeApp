@@ -83,11 +83,11 @@
             string r;
 
             if (goles1 > goles2)
-                r = "Ganador el equipo " + txtEq1.Text;
+                r = "Ganador el equipo: " + txtEq1.Text + " " + GolesEq1.Text +" a " + GolesEq2.Text;
             else if (goles1 < goles2)
-                r = "Ganador el equipo " + txtEq2.Text;
+                r = "Ganador el equipo: " + txtEq2.Text + " " + GolesEq2.Text + " a " + GolesEq1.Text;
             else
-                r = "Empate entre " + txtEq1.Text + " y " + txtEq2.Text;
+                r = "Empate entre " + txtEq1.Text + " y " + txtEq2.Text + " " + GolesEq1.Text + " a " + GolesEq2.Text; ;
 
             DisplayAlert("Final del Juego", r, "OK");
         }

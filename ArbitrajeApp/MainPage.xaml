@@ -3,98 +3,124 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ArbitrajeApp.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
-                Padding="30,0"
-                Spacing="25"
-                BackgroundColor="Black">
+    <Grid>
+        <Image Source="cancha.jpg"
+           Aspect="AspectFill"
+           Opacity="0.4"
+           HorizontalOptions="Fill"
+           VerticalOptions="Fill"/>
+        <ScrollView>
+            <VerticalStackLayout Padding="30,20"
+                             Spacing="20"
+                             BackgroundColor="Transparent">
+                <Label Text="ARBITRAJE"
+                   FontSize="32"
+                   TextColor="#FFD700" 
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   CharacterSpacing="2"/>
+                <VerticalStackLayout Spacing="10">
+                    <Entry x:Name="txtEq1"
+                       Placeholder="EQUIPO LOCAL"
+                       PlaceholderColor="#808080"
+                       TextColor="White"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"/>
 
-            <Label
-                    Text="Arbitraje"
-                    FontSize="42"
-                    HorizontalOptions="Center"
+                    <Label x:Name="GolesEq1"
+                       Text="0"
+                       FontSize="90"
+                       TextColor="#4CD964" 
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold" />
+                    <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                        <Button Text="+ GOL"
+                            Clicked="GolEq1"
+                            TextColor="Black"
+                            BackgroundColor="#4CD964"
+                            FontAttributes="Bold"
+                            CornerRadius="25"
+                            HeightRequest="50"
+                            WidthRequest="110"/>
+
+                        <Button Text="ANULAR"
+                            Clicked="NoGol_Eq1"
+                            TextColor="White"
+                            BackgroundColor="#333333"
+                            FontAttributes="Bold"
+                            CornerRadius="25"
+                            HeightRequest="50"
+                            WidthRequest="110"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+
+                <BoxView HeightRequest="1" Color="Transparent" Margin="20,10"/>
+
+                <BoxView HeightRequest="20" Color="Black"/>
+
+                <Button Text="REINICIAR"
+                    Clicked="Limpiar"
+                    FontSize="16"
+                    TextColor="White"
+                    BackgroundColor="#2C2C2C"
+                    CornerRadius="10"
+                    HeightRequest="50"
                     FontAttributes="Bold"/>
 
-            <Entry
-                    x:Name="txtEq1"
-                    Placeholder="Equipo Local"
-                    FontSize="24"
-                    HorizontalTextAlignment="Center"/>
-
-            <Label
-                    x:Name="GolesEq1"
-                    Text="0"
-                    FontSize="80"
-                    HorizontalOptions="Center"
-                    FontAttributes="Bold" />
-
-            <HorizontalStackLayout
-                        Spacing="10"
-                        HorizontalOptions="Center">
-                <Button
-                        Text="Gol"
-                        FontSize="18"
-                        Clicked="GolEq1" 
-                        TextColor="White"
-                        BackgroundColor="Blue"
-                        FontAttributes="Bold"/>
-                <Button
-                        Text="No Gol"
-                        FontSize="18"
-                        Clicked="NoGol_Eq1" 
-                        TextColor="White"
-                        BackgroundColor="Red"
-                        FontAttributes="Bold"/>
-            </HorizontalStackLayout>
-
-            <Entry
-                    x:Name="txtEq2"
-                    Placeholder="Equipo Visitante"
-                    FontSize="24"
-                    HorizontalTextAlignment="Center" />
-
-            <Label
-                    x:Name="GolesEq2"
-                    Text="0"
-                    FontSize="80"
-                    HorizontalOptions="Center"
-                    FontAttributes="Bold" />
-
-            <HorizontalStackLayout
-                    Spacing="10"
-                    HorizontalOptions="Center">
-                <Button
-                        Text="Gol"
-                        FontSize="18"
-                        Clicked="GolEq2" 
-                        TextColor="White"
-                        BackgroundColor="Blue"
-                        FontAttributes="Bold"/>
-                <Button
-                        Text="No Gol"
-                        FontSize="18"
-                        Clicked="NoGol_Eq2" 
-                        TextColor="White"
-                        BackgroundColor="Red"
-                        FontAttributes="Bold"/>
-            </HorizontalStackLayout>
-
-            <Button
-                    Text="Reiniciar"
-                    FontSize="18"
-                    HorizontalOptions="Center"
-                    Clicked="Limpiar" 
+                <Button Text="TERMINAR PARTIDO"
+                    Clicked="Final"
+                    FontSize="16"
+                    TextColor="White"
+                    BackgroundColor="#FF3B30"
+                    CornerRadius="10"
+                    HeightRequest="50"
                     FontAttributes="Bold"
-                    BackgroundColor="White"/>
+                    Margin="0,0,0,1"/>
 
-            <Button
-                Text="Final de juego"
-                FontSize="18"
-                HorizontalOptions="Center"
-                Clicked="Final" 
-                FontAttributes="Bold"
-                BackgroundColor="White"/>
-        </VerticalStackLayout>
-    </ScrollView>
+                <BoxView HeightRequest="20" Color="Black"/>
+
+                <BoxView HeightRequest="1" Color="Transparent" Margin="20,10"/>
+
+                <VerticalStackLayout Spacing="10">
+                    <Entry x:Name="txtEq2"
+                       Placeholder="EQUIPO VISITANTE"
+                       PlaceholderColor="#808080"
+                       TextColor="White"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center" />
+
+                    <Label x:Name="GolesEq2"
+                       Text="0"
+                       FontSize="90"
+                       TextColor="#FF9500" 
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold" />
+                    <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                        <Button Text="+ GOL"
+                            Clicked="GolEq2"
+                            TextColor="Black"
+                            BackgroundColor="#FF9500"
+                            FontAttributes="Bold"
+                            CornerRadius="25"
+                            HeightRequest="50"
+                            WidthRequest="110"/>
+
+                        <Button Text="ANULAR"
+                            Clicked="NoGol_Eq2"
+                            TextColor="White"
+                            BackgroundColor="#333333"
+                            FontAttributes="Bold"
+                            CornerRadius="25"
+                            HeightRequest="50"
+                            WidthRequest="110"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+
+                
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
 
 </ContentPage>
